@@ -2,13 +2,16 @@ import { View, Text, StyleSheet, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 
 import Routes from "./src/routes";
+import CartProvider from "./src/contexts/CartContext";
 
-export default function App(){
+export default function App() {
 
-  return(
+  return (
     <NavigationContainer>
-      <StatusBar backgroundColor="#FAFAFA" barStyle="dark-content"/>
-      <Routes/>
+      <CartProvider>
+        <StatusBar backgroundColor="#FAFAFA" barStyle="dark-content" />
+        <Routes />
+      </CartProvider>
     </NavigationContainer>
   )
 }
